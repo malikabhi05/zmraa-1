@@ -31,7 +31,7 @@
  */
 
 #ifndef NULL
-#define NULL ((void *)0)
+#define NULL ((void*) 0)
 #endif
 
 
@@ -49,11 +49,13 @@ typedef uint8_t mraa_boolean_t;
  * MRAA supported platform types
  */
 typedef enum {
-    MRAA_INTEL_ARDUINO_101 = 200,    /**< Arduino 101 */
-    MRAA_INTEL_ARDUINO_101_SSS = 201,    /**< Arduino 101 */
-    MRAA_INTEL_D2000_CRB = 202,      /**< Quark D2K CRB */
+    MRAA_INTEL_ARDUINO_101 = 200,           /**< Arduino 101 */
+    MRAA_INTEL_ARDUINO_101_SSS = 201,       /**< Arduino 101 */
+    MRAA_INTEL_D2000_CRB = 202,             /**< Quark D2K CRB */
+    MRAA_INTEL_QUARK_SE_DEVBOARD = 203,     /**< Quark SE Devboard/ C1000 */
+    MRAA_INTEL_QUARK_SE_SSS_DEVBOARD = 204, /**< Quark SE Devboard/ C1000 */
     MRAA_UNKNOWN_PLATFORM =
-   299 /**< An unknown platform type, typically will load INTEL_GALILEO_GEN1 */
+    299 /**< An unknown platform type, typically will load INTEL_GALILEO_GEN1 */
 } mraa_platform_t;
 
 
@@ -61,19 +63,20 @@ typedef enum {
  * MRAA return codes
  */
 typedef enum {
-    MRAA_SUCCESS = 0,                             /**< Expected response */
-    MRAA_ERROR_FEATURE_NOT_IMPLEMENTED = 1,       /**< Feature TODO */
-    MRAA_ERROR_FEATURE_NOT_SUPPORTED = 2,         /**< Feature not supported by HW */
-    MRAA_ERROR_INVALID_VERBOSITY_LEVEL = 3,       /**< Verbosity level wrong */
-    MRAA_ERROR_INVALID_PARAMETER = 4,             /**< Parameter invalid */
-    MRAA_ERROR_INVALID_HANDLE = 5,                /**< Handle invalid */
-    MRAA_ERROR_NO_RESOURCES = 6,                  /**< No resource of that type avail */
-    MRAA_ERROR_INVALID_RESOURCE = 7,              /**< Resource invalid */
-    MRAA_ERROR_INVALID_QUEUE_TYPE = 8,            /**< Queue type incorrect */
-    MRAA_ERROR_NO_DATA_AVAILABLE = 9,             /**< No data available */
-    MRAA_ERROR_INVALID_PLATFORM = 10,             /**< Platform not recognised */
-    MRAA_ERROR_PLATFORM_NOT_INITIALISED = 11,     /**< Board information not initialised */
-    MRAA_ERROR_PLATFORM_ALREADY_INITIALISED = 0,  /**< Board is already initialised, same as MRAA_SUCESS */
+    MRAA_SUCCESS = 0,                         /**< Expected response */
+    MRAA_ERROR_FEATURE_NOT_IMPLEMENTED = 1,   /**< Feature TODO */
+    MRAA_ERROR_FEATURE_NOT_SUPPORTED = 2,     /**< Feature not supported by HW */
+    MRAA_ERROR_INVALID_VERBOSITY_LEVEL = 3,   /**< Verbosity level wrong */
+    MRAA_ERROR_INVALID_PARAMETER = 4,         /**< Parameter invalid */
+    MRAA_ERROR_INVALID_HANDLE = 5,            /**< Handle invalid */
+    MRAA_ERROR_NO_RESOURCES = 6,              /**< No resource of that type avail */
+    MRAA_ERROR_INVALID_RESOURCE = 7,          /**< Resource invalid */
+    MRAA_ERROR_INVALID_QUEUE_TYPE = 8,        /**< Queue type incorrect */
+    MRAA_ERROR_NO_DATA_AVAILABLE = 9,         /**< No data available */
+    MRAA_ERROR_INVALID_PLATFORM = 10,         /**< Platform not recognised */
+    MRAA_ERROR_PLATFORM_NOT_INITIALISED = 11, /**< Board information not initialised */
+    MRAA_ERROR_PLATFORM_ALREADY_INITIALISED =
+    0, /**< Board is already initialised, same as MRAA_SUCESS */
 
     MRAA_ERROR_UNSPECIFIED = 99 /**< Unknown Error */
 } mraa_result_t;
