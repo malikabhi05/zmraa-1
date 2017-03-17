@@ -1,6 +1,6 @@
 /*
- * Author: Thomas Ingleby <thomas.c.ingleby@intel.com>
- * Copyright (c) 2014 Intel Corporation.
+ * Author: Abhishek Malik <abhishek.malik@intel.com>
+ * Copyright (c) 2016 Intel Corporation.
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -28,25 +28,11 @@
 extern "C" {
 #endif
 
-#include "mraa/common.h"
 #include "mraa_internal_types.h"
 
-extern mraa_board_t* plat;
-static struct device* d2k_pinmux_dev;
 
-/**
- * Takes in pin information and sets up the multiplexors.
- *
- * @param meta
- * @return mraa result type indicating success of actions.
- */
-mraa_result_t mraa_setup_mux_mapped(mraa_pin_t meta);
-
-mraa_result_t
-mraa_set_pininfo(mraa_board_t* board, int mraa_pin, int zephyr_pin, char* name, mraa_pincapabilities_t caps);
-
-void mraa_set_board_config(mraa_board_t* board);
-
+mraa_board_t*
+mraa_intel_quark_se_ss_devboard();
 
 #ifdef __cplusplus
 }
